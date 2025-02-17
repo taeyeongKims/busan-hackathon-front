@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage.js';
 import MisstionDetailPage from './pages/MissionDetailPage.jsx';
 import MissionWritePage from './pages/MissionWritePage.jsx';
 import MissionCertifiedPage from './pages/MissionCertifiedPage.jsx';
+import RankingPage from './pages/RankingPage.jsx';
 
 function Router() {
   return (
@@ -13,6 +14,7 @@ function Router() {
       <Route path="/mission-detail" element={<MisstionDetailPage />} />
       <Route path="/mission-write" element={<MissionWritePage />} />
       <Route path="/mission-certified" element={<MissionCertifiedPage />} />
+      <Route path="/ranking" element={<RankingPage />} />
     </Routes>
   );
 }

@@ -62,7 +62,8 @@ const Page = styled.div`
 `
 
 const Header = styled.div`
-  width: 100%;
+  width: 400px;
+  margin: 0 -15px;
   padding: 18px 0;
   text-align: center;
   border-bottom: 1px solid #EDEDED;
