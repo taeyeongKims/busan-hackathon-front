@@ -1,0 +1,37 @@
+.missionPageBg {
+  background-color: #f4f4f4;
+  height: 100%;
+}
+
+.noticeDiv {
+  margin: 15px;
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #2d5b7f;
+
+  color: #fff;
+  font-size: 12px;
+}
+
+.categoryBtn {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  background-color: #fff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  gap: 5px;
+}
+
+.categoryBtnImg {
+  margin-top: 2px;
+}
+
+.categoryBtnBox {
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+  padding: 2px;
+  gap: 5px;
+}
