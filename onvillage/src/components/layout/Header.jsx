@@ -4,6 +4,7 @@ import Logo from '../../assets/Logo.png';
 function Header() {
   return (
     <Container>
+      {/* <meta name="viewport" content="width=device-width,initial-scale=1" /> */}
       <img src={Logo} alt="Logo" />
     </Container>
   );
