@@ -13,6 +13,11 @@
   font-size: 12px;
 }
 
+.missionList {
+  height: 70vh;
+  overflow: auto;
+}
+
 .categoryBtn {
   display: flex;
   align-items: center;

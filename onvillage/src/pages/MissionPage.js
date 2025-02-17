@@ -4,7 +4,6 @@ import style from './MissionPage.module.css';
 import Layout from '../components/layout/Layout';
 import { useEffect, useState } from 'react';
 import { useMissions } from '../context/MIssionContext';
-import { useState } from 'react';
 import BottomSheet from '../components/common/BottomSheet';
 
 const dummyData = [
@@ -118,7 +117,9 @@ function MissionPage() {
             <IoCaretDownOutline className={style.categoryBtnImg} />
           </button>
         </div>
-        <MissionList />
+        <div className={style.missionList}>
+          <MissionList />
+        </div>
       </div>
 
       <BottomSheet
