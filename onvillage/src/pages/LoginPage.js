@@ -23,6 +23,10 @@ export default function LoginPage() {
   const handleBack = () => {
     navigate('/');
   };
+
+  const handleSignup = () => {
+    navigate('/signup');
+  };
   return (
     <Layout showNavBar={false} showHeader={false}>
       <div className={styles.loginHeader}>
@@ -75,6 +79,14 @@ export default function LoginPage() {
               로그인
             </button>
           </form>
+          <ul className={styles.btnList}>
+            <li className={styles.listItem}>아이디 찾기</li>
+            <li className={styles.listItem}> 비밀번호 찾기</li>
+            <li className={styles.listItem} onClick={handleSignup}>
+              {' '}
+              회원가입
+            </li>
+          </ul>
         </div>
       </div>
     </Layout>
