@@ -1,7 +1,15 @@
-.missionHeader {
-  width: 100vw;
+.missionPageBg {
+  background-color: #f4f4f4;
+  height: 100%;
 }
 
-.LogoImg {
-  width: 30px;
+.noticeDiv {
+  margin: 15px;
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #2d5b7f;
+
+  color: #fff;
+  font-size: 12px;
 }

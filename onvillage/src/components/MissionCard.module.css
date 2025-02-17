@@ -1,0 +1,51 @@
+.cardContainer {
+  border-radius: 8px;
+  padding: 15px;
+  margin: 2% 4% 0;
+  background-color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTextDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.missionTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.missionInfo {
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+}
+
+.missionInfo span {
+  color: #929292;
+}
+
+.missionState {
+  display: flex;
+  gap: 10px;
+}
+
+.stateImgBox {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.stateImg {
+  margin-top: 2px;
+}
+
+.cardContainer img {
+  width: 60px;
+  height: 60px;
+}
