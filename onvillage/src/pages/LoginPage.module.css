@@ -47,14 +47,11 @@
 
 .loginForm {
   margin-top: 15px;
-}
-
-.loginForm div {
   display: flex;
   flex-direction: column;
 }
 
-.loginForm {
+.loginForm div {
   display: flex;
   flex-direction: column;
 }
