@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './App.js';
+import { Routes, Route } from 'react-router-dom';
 import MissionPage from './pages/MissionPage';
 import LoginPage from './pages/LoginPage.js';
 
