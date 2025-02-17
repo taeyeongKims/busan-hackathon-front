@@ -18,7 +18,7 @@ const RankingPage = () => {
         </div>
         <div id="blue-box">
           <span className="grade">1</span>
-          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MTlfMzAw%2FMDAxNzI2NzUwNTgzNzkw.AekQPqZ3peslDg3SEO1Qu1zrO17306r-qyBfk2HrADAg.PZBlK8l6yprY6ZSjXSp2nd_wuqbYxY6Ney5FCzo1bSUg.JPEG%2F%25BA%25B9%25BB%25E7.jpg&type=sc960_832" alt="프로필사진" />
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MTRfNiAg%2FMDAxNzIzNTk2MjEzMDM4.baFHlj_g_N-Ah5ZedAMxVQxhSoJyfT4BS9pGuBaPh2gg.m4kFWuEkO8VMqigtfUFpxQoELFiHYbFSM-_l2mad4QYg.JPEG%2FSE-f99542bb-2f1d-4f97-8099-e3c577c1e226.jpg&type=sc960_832" alt="프로필사진" />
           <span className="nickname">닉네임</span>
           <span className="write-score">제작: 18</span>
           <span className="join-score">참여: 29</span>
