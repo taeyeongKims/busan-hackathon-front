@@ -20,12 +20,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
+`;
 
 const Main = styled.main`
   width: 100%;
   height: 100%;
-  background-color: #F4F4F4;
-`
+  background-color: #f4f4f4;
+`;
 
 export default Layout;
