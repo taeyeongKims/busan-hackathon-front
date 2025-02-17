@@ -1,6 +1,7 @@
 import { IoCaretDownOutline } from 'react-icons/io5';
 import MissionCard from '../components/MissionCard';
 import style from './MissionPage.module.css';
+import Layout from '../components/layout/Layout';
 
 const dummyData = [
   {
@@ -67,14 +68,16 @@ function CategoryBtn({ name }) {
 
 function MissionPage() {
   return (
-    <div className={style.missionPageBg}>
-      <div className={style.noticeDiv}>📢 부산에서 열린 여러가지 미션에 참여해보세요!</div>
-      <div className={style.categoryBtnBox}>
-        <CategoryBtn name="전체" />
-        <CategoryBtn name="최신순" />
+    <Layout>
+      <div className={style.missionPageBg}>
+        <div className={style.noticeDiv}>📢 부산에서 열린 여러가지 미션에 참여해보세요!</div>
+        <div className={style.categoryBtnBox}>
+          <CategoryBtn name="전체" />
+          <CategoryBtn name="최신순" />
+        </div>
+        <MissionList />
       </div>
-      <MissionList />
-    </div>
+    </Layout>
   );
 }
 
