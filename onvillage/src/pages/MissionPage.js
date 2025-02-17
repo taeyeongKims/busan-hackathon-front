@@ -4,6 +4,8 @@ import style from './MissionPage.module.css';
 import Layout from '../components/layout/Layout';
 import { useEffect, useState } from 'react';
 import { useMissions } from '../context/MIssionContext';
+import { useState } from 'react';
+import BottomSheet from '../components/common/BottomSheet';
 
 const dummyData = [
   {
@@ -83,16 +85,48 @@ function CategoryBtn({ name }) {
 }
 
 function MissionPage() {
+  const [isBottomSheetOpen, setBottomSheetOpen] = useState(false);
+  const [bottomSheetType, setBottomSheetType] = useState('sort');
+  const [selectedSort, setSelectedSort] = useState('최신순');
+  const [selectedCategory, setSelectedCategory] = useState('카테고리');
+
+  const toggleBottomSheet = (type) => {
+    setBottomSheetType(type);
+    setBottomSheetOpen(true); // BottomSheet 열기
+  };
+
+  const handleSelect = (value) => {
+    if (bottomSheetType === 'sort') {
+      setSelectedSort(value); // 정렬값 업데이트
+    } else {
+      setSelectedCategory(value); // 카테고리값 업데이트
+    }
+    setBottomSheetOpen(false); // BottomSheet 닫기
+  };
+
   return (
     <Layout>
       <div className={style.missionPageBg}>
         <div className={style.noticeDiv}>📢 부산에서 열린 여러가지 미션에 참여해보세요!</div>
         <div className={style.categoryBtnBox}>
-          <CategoryBtn name="전체" />
-          <CategoryBtn name="최신순" />
+          <button className={style.categoryBtn} onClick={() => toggleBottomSheet('sort')}>
+            {selectedSort}
+            <IoCaretDownOutline className={style.categoryBtnImg} />
+          </button>
+          <button className={style.categoryBtn} onClick={() => toggleBottomSheet('category')}>
+            {selectedCategory}
+            <IoCaretDownOutline className={style.categoryBtnImg} />
+          </button>
         </div>
         <MissionList />
       </div>
+
+      <BottomSheet
+        isOpen={isBottomSheetOpen}
+        toggleSheet={() => setBottomSheetOpen(false)}
+        type={bottomSheetType}
+        onSelect={handleSelect} // 선택된 값을 업데이트하는 함수 전달
+      />
     </Layout>
   );
 }
