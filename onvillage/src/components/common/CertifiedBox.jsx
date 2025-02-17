@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import { BiLike  } from "react-icons/bi";
+import { BiLike, BiSolidLike } from "react-icons/bi";
 
 function CertifiedBox() {
 
   return (
     <Container>
       <Top>
-        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMjVfMTg2%2FMDAxNzM3ODA4MDAyOTUz.inKHPGalQ84p-DaXC-AAJSTqN3vTqtwLzcuqZa-VtdIg.tQICJa_dnmbUAMlxXRMciQ8JkeR7osRk1V0pRU1NnRsg.JPEG%2FKakaoTalk_20250125_212532060_02.jpg&type=sc960_832" alt="인증사진" />
+        <img id="review-image" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMjVfMTg2%2FMDAxNzM3ODA4MDAyOTUz.inKHPGalQ84p-DaXC-AAJSTqN3vTqtwLzcuqZa-VtdIg.tQICJa_dnmbUAMlxXRMciQ8JkeR7osRk1V0pRU1NnRsg.JPEG%2FKakaoTalk_20250125_212532060_02.jpg&type=sc960_832" alt="인증사진" />
         <div id="like-count">
           <BiLike size={18}/>
           2
@@ -34,10 +34,10 @@ function CertifiedBox() {
 export default CertifiedBox;
 
 const Container = styled.div`
-  border-bottom: 1px solid #D4D4D4;
+  border-bottom: 1px solid #F6F6F6;
   width: 100%;
-  padding: 15px 15px 10px;
   background-color: white;
+  padding-bottom: 10px;
 `
 
 const Top = styled.div`
@@ -45,7 +45,7 @@ const Top = styled.div`
  justify-content: space-between;
  margin-bottom: 10px;
 
- img {
+ #review-image {
    width: 95px;
    height: 95px;
  }

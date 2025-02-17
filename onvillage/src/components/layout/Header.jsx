@@ -5,6 +5,7 @@ function Header() {
 
   return (
     <Container>
+      {/* <meta name="viewport" content="width=device-width,initial-scale=1" /> */}
       <img src={Logo} alt="Logo" />
     </Container>
   );
@@ -17,7 +18,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0 15px;
-  
+
   img {
     width: 55px;
   }

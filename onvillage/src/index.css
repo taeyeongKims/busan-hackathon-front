@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body,
+html {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  font-family: Noto Sans Korean, sans-serif;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* width: 100vw; */
+}
