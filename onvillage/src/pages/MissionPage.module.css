@@ -18,6 +18,10 @@
   overflow: auto;
 }
 
+.missionList::-webkit-scrollbar {
+  display: none;
+}
+
 .categoryBtn {
   display: flex;
   align-items: center;
