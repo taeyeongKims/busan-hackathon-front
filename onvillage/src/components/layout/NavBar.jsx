@@ -5,25 +5,41 @@ import { RiFileEditLine, RiFileEditFill } from 'react-icons/ri';
 import { BsClipboardCheck, BsClipboardCheckFill } from 'react-icons/bs';
 import { BiTrophy, BiSolidTrophy } from 'react-icons/bi';
 import { FaRegUser, FaUser } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 
 function NavBar() {
+  const navigate = useNavigate();
+
+  const handleClickHome = () => {
+    navigate('/');
+  };
+  const handleClickMissionCreate = () => {
+    navigate('/mission-write');
+  };
+  const handleClickMissionCertified = () => {
+    navigate('/mission-certified');
+  };
+  const handleClickRanking = () => {
+    navigate('/ranking');
+  };
+
   return (
     <Container>
-      <MenuItem>
+      <MenuItem onClick={handleClickHome}>
         <GoHome size={20} style={{ strokeWidth: 0.5 }} />홈
       </MenuItem>
 
-      <MenuItem>
+      <MenuItem onClick={handleClickMissionCreate}>
         <RiFileEditLine size={18} />
         미션작성
       </MenuItem>
 
-      <MenuItem>
+      <MenuItem onClick={handleClickMissionCertified}>
         <BsClipboardCheck size={17} style={{ strokeWidth: 0.5 }} />
         미션인증
       </MenuItem>
 
-      <MenuItem>
+      <MenuItem onClick={handleClickRanking}>
         <BiTrophy size={20} />
         랭킹
       </MenuItem>
