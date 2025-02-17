@@ -45,6 +45,7 @@
   align-items: center;
   gap: 5px;
   justify-content: end;
+  cursor: pointer;
 }
 
 .input {

@@ -7,11 +7,22 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
-    loginId: '',
-    password: '',
-    nickName: '',
+    loginId: "string",
+    password: "string",
+    nickname: "string",
+    image: "string",
+    location: {
+      zipcode: "48303",
+      address: "부산 수영구 광안해변로 217",
+      detailAddress: "부산 수영구 광안동 193-1",
+      sido: "부산시",
+      sigugun: "수영구",
+      dong: "광안동",
+    },
   });
   const { signup } = useUser();
+
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -22,6 +33,7 @@ export default function SignUpPage() {
 
     signup({ userId: formData.loginId, password: formData.password, nickName: formData.nickName });
   };
+
 
   return (
     <Layout showNavBar={false} showHeader={false}>
@@ -76,10 +88,11 @@ export default function SignUpPage() {
               />
             </div>
 
-            <div className={styles.signupLocaBtn}>
+            <div className={styles.signupLocaBtn} >
               <FaMapMarkerAlt />
               <p>나의 위치 찾기</p>
             </div>
+
 
             <button type="submit" className={styles.signupButton}>
               회원가입
