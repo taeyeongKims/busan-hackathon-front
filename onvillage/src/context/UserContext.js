@@ -10,10 +10,10 @@ export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
 
   /* 로그인 */
-  const login = async ({ userId, password }) => {
+  const login = async ({ loginId, password }) => {
     try {
       const response = await axios.post(`${apiUrl}/auth/login`, {
-        userId: userId,
+        loginId: loginId,
         password: password,
       });
 
@@ -37,6 +37,7 @@ export const UserProvider = ({ children }) => {
         password: password,
         nickName: nickName,
       });
+      navigate('/');
     } catch (error) {
       console.log('사용자 세션 생성 요청 실패', error);
     }

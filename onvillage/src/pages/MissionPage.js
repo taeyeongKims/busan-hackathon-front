@@ -2,6 +2,8 @@ import { IoCaretDownOutline } from 'react-icons/io5';
 import MissionCard from '../components/MissionCard';
 import style from './MissionPage.module.css';
 import Layout from '../components/layout/Layout';
+import { useEffect, useState } from 'react';
+import { useMissions } from '../context/MIssionContext';
 
 const dummyData = [
   {
@@ -31,9 +33,23 @@ const dummyData = [
 ];
 
 function MissionList() {
-  return dummyData.map((mission) => (
+  const [missions, setMissions] = useState([]);
+  const { getMissionList } = useMissions();
+
+  useEffect(() => {
+    const fetchMissions = async () => {
+      const datas = await getMissionList();
+      setMissions(datas.missionList || []);
+    };
+
+    fetchMissions();
+  }, []);
+
+  if (!missions) return <p>로딩 중...</p>;
+
+  return missions.map((mission) => (
     <MissionCard
-      key={mission.id}
+      key={mission.missionId}
       nickname={mission.nickname}
       title={mission.title}
       image={mission.image}

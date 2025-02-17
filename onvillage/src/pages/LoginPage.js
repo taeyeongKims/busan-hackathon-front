@@ -17,7 +17,7 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login({ userId: formData.loginId, password: formData.password });
+    login({ loginId: formData.loginId, password: formData.password });
   };
 
   const handleBack = () => {

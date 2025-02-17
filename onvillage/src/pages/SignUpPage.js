@@ -11,7 +11,7 @@ export default function SignUpPage() {
     password: '',
     nickName: '',
   });
-  const { signup } = useUser();
+  const { signUp } = useUser();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -20,7 +20,7 @@ export default function SignUpPage() {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    signup({ userId: formData.loginId, password: formData.password, nickName: formData.nickName });
+    signUp({ userId: formData.loginId, password: formData.password, nickName: formData.nickName });
   };
 
   return (
