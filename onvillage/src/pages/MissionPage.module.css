@@ -21,6 +21,9 @@
   padding: 6px 8px;
   border-radius: 8px;
   gap: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 .categoryBtnImg {
