@@ -44,7 +44,8 @@ const Page = styled.div`
 `
 
 const Header = styled.div`
-  width: 100%;
+  width: 400px;
+  margin: 0 -15px;
   height: 55px;
   background-color: white;
   display: flex;
