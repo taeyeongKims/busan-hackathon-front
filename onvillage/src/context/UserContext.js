@@ -19,7 +19,7 @@ export const UserProvider = ({ children }) => {
 
       if (response.data) {
         setUser(response.data);
-        return response.data;
+        navigate('/');
       } else {
         console.log('유저 데이터가 없습니다.');
         return null;

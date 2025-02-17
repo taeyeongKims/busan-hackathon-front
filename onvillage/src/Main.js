@@ -5,14 +5,10 @@ import LoginPage from './pages/LoginPage.js';
 
 function Main() {
   return (
-    <BrowserRouter>
-      <App>
-        <Routes>
-          <Route path="/" element={<MissionPage />} />
-          <Route path="/login" element={<LoginPage />} />
-        </Routes>
-      </App>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<MissionPage />} />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
   );
 }
 
