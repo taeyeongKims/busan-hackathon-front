@@ -25,6 +25,7 @@ const Container = styled.div`
 const Main = styled.main`
   width: 100%;
   height: 100%;
+  background-color: #f4f4f4;
 `;
 
 export default Layout;
