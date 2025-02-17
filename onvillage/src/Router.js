@@ -3,6 +3,7 @@ import MissionPage from './pages/MissionPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MisstionDetailPage from './pages/MissionDetailPage.jsx';
 import MissionWritePage from './pages/MissionWritePage.jsx';
+import MissionCertifiedPage from './pages/MissionCertifiedPage.jsx';
 
 function Router() {
   return (
@@ -11,6 +12,7 @@ function Router() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/mission-detail" element={<MisstionDetailPage />} />
       <Route path="/mission-write" element={<MissionWritePage />} />
+      <Route path="/mission-certified" element={<MissionCertifiedPage />} />
     </Routes>
   );
 }
