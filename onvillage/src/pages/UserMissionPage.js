@@ -31,15 +31,4 @@ function UserMissionPage() {
   ));
 }
 
-function MissionPage() {
-  return (
-    <Layout>
-      <div className={style.missionPageBg}>
-        <div className={style.noticeDiv}>📢 부산에서 열린 여러가지 미션에 참여해보세요!</div>
-        <MissionList />
-      </div>
-    </Layout>
-  );
-}
-
 export default UserMissionPage;
