@@ -3,10 +3,13 @@ import styles from './LoginPage.module.css';
 import { useUser } from '../context/UserContext';
 import Layout from '../components/layout/Layout';
 import Logo from '../assets/Logo.png';
+import { IoIosArrowBack } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ loginId: '', password: '' });
   const { login } = useUser();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -17,8 +20,16 @@ export default function LoginPage() {
     login({ userId: formData.loginId, password: formData.password });
   };
 
+  const handleBack = () => {
+    navigate('/');
+  };
   return (
     <Layout showNavBar={false} showHeader={false}>
+      <div className={styles.loginHeader}>
+        <IoIosArrowBack onClick={handleBack} />
+        <p>로그인</p>
+        <div></div>
+      </div>
       <div className={styles.loginContainer}>
         <div className={styles.loginCard}>
           <div className={styles.loginText}>
