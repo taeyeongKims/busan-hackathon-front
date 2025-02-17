@@ -3,12 +3,12 @@ import Header from './Header';
 import NavBar from './NavBar';
 import styled from 'styled-components';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showNavBar = true, showHeader = true }) => {
   return (
     <Container>
-      <Header />
+      {showHeader && <Header />}
       <Main>{children}</Main>
-      <NavBar />
+      {showNavBar && <NavBar />}
     </Container>
   );
 };
