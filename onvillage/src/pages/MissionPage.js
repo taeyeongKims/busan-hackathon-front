@@ -1,3 +1,4 @@
+import { IoCaretDownOutline } from 'react-icons/io5';
 import MissionCard from '../components/MissionCard';
 import style from './MissionPage.module.css';
 
@@ -42,10 +43,36 @@ function MissionList() {
   ));
 }
 
+const categories = [
+  '감성샷',
+  '전통문화',
+  '바다뷰',
+  '핫플',
+  '먹거리',
+  '가족코스',
+  '예술전시',
+  '힐링산책',
+  '액티비티',
+  '야경명소',
+];
+
+function CategoryBtn({ name }) {
+  return (
+    <div className={style.categoryBtn}>
+      {name}
+      <IoCaretDownOutline className={style.categoryBtnImg} />
+    </div>
+  );
+}
+
 function MissionPage() {
   return (
     <div className={style.missionPageBg}>
       <div className={style.noticeDiv}>📢 부산에서 열린 여러가지 미션에 참여해보세요!</div>
+      <div className={style.categoryBtnBox}>
+        <CategoryBtn name="전체" />
+        <CategoryBtn name="최신순" />
+      </div>
       <MissionList />
     </div>
   );

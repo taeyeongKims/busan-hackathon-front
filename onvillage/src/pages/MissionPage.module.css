@@ -13,3 +13,25 @@
   color: #fff;
   font-size: 12px;
 }
+
+.categoryBtn {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  background-color: #fff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  gap: 5px;
+}
+
+.categoryBtnImg {
+  margin-top: 2px;
+}
+
+.categoryBtnBox {
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+  padding: 2px;
+  gap: 5px;
+}

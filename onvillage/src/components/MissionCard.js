@@ -2,11 +2,10 @@ import { BiSolidLike } from 'react-icons/bi';
 import { BiSolidCommentDetail } from 'react-icons/bi';
 
 import style from './MissionCard.module.css';
-import Image from '../assets/Cafe.png';
 
-function MissionCard({ nickname, title, image, scrapNumber, applySuccessNumber, date }) {
+function MissionCard({ key, nickname, title, image, scrapNumber, applySuccessNumber, date }) {
   return (
-    <div className={style.cardContainer}>
+    <div key={key} className={style.cardContainer}>
       <div className={style.cardTextDiv}>
         <div className={style.missionTitle}>{title}</div>
         <div className={style.missionInfo}>
