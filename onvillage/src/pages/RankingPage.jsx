@@ -1,54 +1,79 @@
-import styled from "styled-components";
-import Layout from "../components/layout/Layout";
+import styled from 'styled-components';
+import Layout from '../components/layout/Layout';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const RankingPage = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const [rank, setRank] = useState([]);
+
+  useEffect(() => {
+    const fetchRankingData = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/ranking`);
+        const dataWithRank = response.data.ranking;
+        setRank(dataWithRank);
+      } catch (error) {
+        console.log('랭킹 정보 가져오기 실패:', error);
+      }
+    };
+
+    fetchRankingData();
+  }, []); // 컴포넌트가 처음 마운트될 때 한 번만 호출
 
   return (
     <Layout showHeader={false}>
       <Page>
-      <Header>미션작성</Header>
+        <Header>미션작성</Header>
 
-      <RankingTop>
-        <div className="yellow-box">
-          <span className="grade">2</span>
-          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEyMjlfODEg%2FMDAxNzM1NDc0MDM4NDI0.iuSnuNB9Q45TuwjFCKgc4d0mlFwxPCTFJxJ6KBDuxMEg.PHi6A6qCvpKc5FB8L0XP6mkk5LbSIQb5jPw4vUHg7Zkg.JPEG%2F%253F%259D%25B4%253F%2584%259C_%25281%2529.jpg&type=sc960_832" alt="프로필사진" />
-          <span className="nickname">닉네임</span>
-          <span className="write-score">제작: 18</span>
-          <span className="join-score">참여: 29</span>
-        </div>
-        <div id="blue-box">
-          <span className="grade">1</span>
-          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MTlfMzAw%2FMDAxNzI2NzUwNTgzNzkw.AekQPqZ3peslDg3SEO1Qu1zrO17306r-qyBfk2HrADAg.PZBlK8l6yprY6ZSjXSp2nd_wuqbYxY6Ney5FCzo1bSUg.JPEG%2F%25BA%25B9%25BB%25E7.jpg&type=sc960_832" alt="프로필사진" />
-          <span className="nickname">닉네임</span>
-          <span className="write-score">제작: 18</span>
-          <span className="join-score">참여: 29</span>
-        </div>
-        <div className="yellow-box">
-          <span className="grade">3</span>
-          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEyMjlfODEg%2FMDAxNzM1NDc0MDM4NDI0.iuSnuNB9Q45TuwjFCKgc4d0mlFwxPCTFJxJ6KBDuxMEg.PHi6A6qCvpKc5FB8L0XP6mkk5LbSIQb5jPw4vUHg7Zkg.JPEG%2F%253F%259D%25B4%253F%2584%259C_%25281%2529.jpg&type=sc960_832" alt="프로필사진" />
-          <span className="nickname">닉네임</span>
-          <span className="write-score">제작: 18</span>
-          <span className="join-score">참여: 29</span>
-        </div>
-      </RankingTop>
+        <RankingTop>
+          {rank[1] && (
+            <div className="yellow-box">
+              <span className="grade">2</span>
+              <img src={rank[1].profile} alt="프로필사진" />
+              <span className="nickname">{rank[1].name}</span>
+              <span className="write-score">제작: {rank[1].missionCount}</span>
+              <span className="join-score">참여: {rank[1].achievementCount}</span>
+            </div>
+          )}
+          {rank[0] && (
+            <div id="blue-box">
+              <span className="grade">1</span>
+              <img src={rank[0].profile} alt="프로필사진" />
+              <span className="nickname">{rank[0].name}</span>
+              <span className="write-score">제작: {rank[0].missionCount}</span>
+              <span className="join-score">참여: {rank[0].achievementCount}</span>
+            </div>
+          )}
+          {rank[2] && (
+            <div className="yellow-box">
+              <span className="grade">3</span>
+              <img src={rank[2].profile} alt="프로필사진" />
+              <span className="nickname">{rank[2].name}</span>
+              <span className="write-score">제작: {rank[2].missionCount}</span>
+              <span className="join-score">참여: {rank[2].achievementCount}</span>
+            </div>
+          )}
+        </RankingTop>
 
-      {/* <RankingResult>
+        {/* <RankingResult>
         <span className="grade-bottom">Rank</span>
         <span className="nickname-bottom">User</span>
         <span className="write-score-bottom">Points</span>
       </RankingResult> */}
 
-      <RankingBottom>
-        <div className="ranking-item">
-          <span className="grade-bottom">4</span>
-          <span className="nickname-bottom">어쩌라고</span>
-          <div>
-            <span className="write-score-bottom">제작: 18</span>
-            <span className="join-score-bottom">참여: 29</span>
-          </div>
-        </div>
-      </RankingBottom>
-      
+        <RankingBottom>
+          {rank.slice(3, Math.min(10, rank.length)).map((rank, index) => (
+            <div className="ranking-item">
+              <span className="grade-bottom">{index + 4}</span>
+              <span className="nickname-bottom">{rank.name}</span>
+              <div>
+                <span className="write-score-bottom">제작: {rank.missionCount}</span>
+                <span className="join-score-bottom">참여: {rank.achievementCount}</span>
+              </div>
+            </div>
+          ))}
+        </RankingBottom>
       </Page>
     </Layout>
   );
@@ -61,8 +86,8 @@ const Page = styled.div`
   background-color: white;
   height: 100%;
   padding: 0 15px;
-  background: linear-gradient(162.4deg, #2D5B7F 7.35%, #E6CFB0 69.45%);
-`
+  background: linear-gradient(162.4deg, #2d5b7f 7.35%, #e6cfb0 69.45%);
+`;
 
 const Header = styled.div`
   width: 400px;
@@ -72,9 +97,9 @@ const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #EDEDED;
+  border-bottom: 1px solid #ededed;
   font-size: 16px;
-`
+`;
 
 const RankingTop = styled.div`
   margin-top: 42px;
@@ -100,14 +125,14 @@ const RankingTop = styled.div`
   }
 
   .yellow-box {
-    background-color: #E6CFB0;
+    background-color: #e6cfb0;
     width: 100px;
     height: 137px;
     margin-top: 65px;
   }
 
   #blue-box {
-    background-color: #2D5B7F;
+    background-color: #2d5b7f;
     width: 135px;
     height: 167px;
 
@@ -119,7 +144,7 @@ const RankingTop = styled.div`
       font-size: 16px;
       margin-top: 15px;
     }
-    .write-score, 
+    .write-score,
     .join-score {
       font-size: 14px;
     }
@@ -137,10 +162,11 @@ const RankingTop = styled.div`
     margin-bottom: 11px;
   }
 
-  .write-score, .join-score {
+  .write-score,
+  .join-score {
     font-size: 12px;
   }
-`
+`;
 
 // const RankingResult = styled.div`
 //   display: flex;
@@ -153,7 +179,7 @@ const RankingTop = styled.div`
 
 //   .grade-bottom {
 //     width: 20px;
-//   }  
+//   }
 
 //   .nickname-bottom {
 //     width: 220px;
@@ -166,8 +192,11 @@ const RankingTop = styled.div`
 
 const RankingBottom = styled.div`
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 
   .ranking-item {
     display: flex;
@@ -177,24 +206,27 @@ const RankingBottom = styled.div`
     padding: 15px 10px;
     border-radius: 15px;
     background-color: white;
-
+    gap: 3px;
 
     div {
       display: flex;
       gap: 8px;
     }
   }
-  
+
   .grade-bottom {
     width: 20px;
-  }  
+    margin-right: 10px;
+    text-align: end;
+  }
 
   .nickname-bottom {
     width: 220px;
   }
 
-  .write-score-bottom, .join-score-bottom {
+  .write-score-bottom,
+  .join-score-bottom {
     width: 53px;
     font-size: 14px;
   }
-`
+`;
