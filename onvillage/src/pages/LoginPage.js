@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './LoginPage.module.css';
 import { useUser } from '../context/UserContext';
 import Layout from '../components/layout/Layout';
+import Logo from '../assets/Logo.png';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ loginId: '', password: '' });
@@ -20,12 +21,20 @@ export default function LoginPage() {
     <Layout showNavBar={false} showHeader={false}>
       <div className={styles.loginContainer}>
         <div className={styles.loginCard}>
-          <h2 className={styles.loginTitle}>로그인</h2>
-          <p className={styles.loginSubtitle}>미션을 통해 숨겨진 관광 명소를 즐기는 재미, 이제 시작해 보세요!</p>
+          <div className={styles.loginText}>
+            <h2 className={styles.loginTitle}>안녕하세요</h2>
+            <div>
+              <img src={Logo} />
+              <h2 className={styles.loginTitle}>입니다</h2>
+            </div>
+
+            <p className={styles.loginSubtitle}>미션을 통해 숨겨진 관광 명소를 즐기는 재미, 이제 시작해 보세요!</p>
+          </div>
+
           <form onSubmit={handleLogin} className={styles.loginForm}>
             <div>
               <label htmlFor="id" className={styles.loginLabel}>
-                이메일
+                아이디
               </label>
               <input
                 id="loginId"
