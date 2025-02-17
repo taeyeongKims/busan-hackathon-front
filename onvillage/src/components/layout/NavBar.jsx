@@ -22,6 +22,9 @@ function NavBar() {
   const handleClickRanking = () => {
     navigate('/ranking');
   };
+  const handleClickMyPage = () => {
+    navigate('/mypage');
+  };
 
   return (
     <Container>
@@ -45,7 +48,7 @@ function NavBar() {
       </MenuItem>
 
       <MenuItem>
-        <FaRegUser size={18} />
+        <FaRegUser size={18} onClick={handleClickMyPage} />
         마이페이지
       </MenuItem>
     </Container>

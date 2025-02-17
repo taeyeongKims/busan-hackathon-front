@@ -39,10 +39,7 @@ const RankingPage = () => {
           {rank[0] && (
             <div id="blue-box">
               <span className="grade">1</span>
-              <img
-                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MTlfMzAw%2FMDAxNzI2NzUwNTgzNzkw.AekQPqZ3peslDg3SEO1Qu1zrO17306r-qyBfk2HrADAg.PZBlK8l6yprY6ZSjXSp2nd_wuqbYxY6Ney5FCzo1bSUg.JPEG%2F%25BA%25B9%25BB%25E7.jpg&type=sc960_832"
-                alt="프로필사진"
-              />
+              <img src={rank[0].profile} alt="프로필사진" />
               <span className="nickname">{rank[0].name}</span>
               <span className="write-score">제작: {rank[0].missionCount}</span>
               <span className="join-score">참여: {rank[0].achievementCount}</span>
@@ -51,10 +48,7 @@ const RankingPage = () => {
           {rank[2] && (
             <div className="yellow-box">
               <span className="grade">3</span>
-              <img
-                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEyMjlfODEg%2FMDAxNzM1NDc0MDM4NDI0.iuSnuNB9Q45TuwjFCKgc4d0mlFwxPCTFJxJ6KBDuxMEg.PHi6A6qCvpKc5FB8L0XP6mkk5LbSIQb5jPw4vUHg7Zkg.JPEG%2F%253F%259D%25B4%253F%2584%259C_%25281%2529.jpg&type=sc960_832"
-                alt="프로필사진"
-              />
+              <img src={rank[2].profile} alt="프로필사진" />
               <span className="nickname">{rank[2].name}</span>
               <span className="write-score">제작: {rank[2].missionCount}</span>
               <span className="join-score">참여: {rank[2].achievementCount}</span>
