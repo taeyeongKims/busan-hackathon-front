@@ -30,7 +30,7 @@ export const UserProvider = ({ children }) => {
   };
 
   /* 회원가입 */
-  const createUser = async ({ userId, password, nickName }) => {
+  const signUp = async ({ userId, password, nickName }) => {
     try {
       const response = await axios.post(`${apiUrl}/auth/register`, {
         userId: userId,
@@ -42,7 +42,7 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-  return <UserContext.Provider value={{ user, setUser, login, createUser }}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={{ user, setUser, login, signUp }}>{children}</UserContext.Provider>;
 };
 
 export const useUser = () => {
