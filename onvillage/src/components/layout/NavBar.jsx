@@ -40,3 +40,14 @@ function NavBar() {
 
 export default NavBar;
 
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+`
+
+const MenuItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
